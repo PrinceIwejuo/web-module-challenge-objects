@@ -6,13 +6,14 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
-    /* Code here */
+function createMenuItem(name, price, category){
+    return {name, price, category};
 }
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
-
-
+console.log(createMenuItem('steak', 30, 'dinner'));
+console.log(createMenuItem('lobster', 25, 'lunch'));
+console.log(createMenuItem('McGriddle', 4, 'breakfast'));
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
@@ -24,8 +25,16 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
+const discount = {
+  'teacher': '25%',
+  'student': '25%',
+  'public': '10%',
+  'burger': '$18',
 
-
+  lunchSpecial: function(teacher){
+    return `${this.teacher} purchases a ${this.burger}`;
+  }
+}
 ///////////////Reviews (MVP)///////////////////
 
 const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
@@ -39,9 +48,13 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 3: Console.log just Julius' feedback */
-
+console.log(reviews[5].feedback);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+function addRating(array, name, rating){
+  array.push({name, rating, review});
+  return array;
+}
 
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
